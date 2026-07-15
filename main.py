@@ -23,6 +23,16 @@ error,ber=calculate_ber(sent,received)
 print("Bit Error:",error)
 print("BER:",ber)
 
+total_bits=len(sent)
+accuracy =(total_bits-error)/total_bits*100
+
+print("===================")
+print("Total Bits:",total_bits)
+print("Error Bits:",error)
+print("BER   :",ber)
+print("Accuracry :",round(accuracy,2),"%")
+print("====================")
+
 result=binary_to_text(received)
  
 print("Receiver :")
