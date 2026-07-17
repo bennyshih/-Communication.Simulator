@@ -10,11 +10,11 @@ sent= text_to_binary(message)
 print("Sender :")
 print(sent)
 
-error_count =int (input("請問要翻幾個 bit:"))
+error_rate =float (input("請輸入錯誤率(例如 0.1代表 10%):"))
 
 
 
-received=channel(sent,error_count)
+received=channel(sent,error_rate)
 
 print ("Channel:")
 print(received)
@@ -37,3 +37,14 @@ result=binary_to_text(received)
  
 print("Receiver :")
 print(result)
+
+print(" \n ========== Compare ============")
+print("Original :"  , message)
+print("Received :"  , result)
+
+
+if message == result:
+    print("Transmission :SUCCESS")
+else:
+      print("Transmission: FAILED")
+print("===================================")
